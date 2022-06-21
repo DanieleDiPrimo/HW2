@@ -215,3 +215,16 @@ footer span{
     text-decoration: none; 
 }
 
+@media(max-width: 720px){
+    nav{
+        font-size: 7px;
+    }
+
+    #username{
+        font-size: 7px;
+    }
+
+    footer span{
+        font-size: 10px;
+    }
+}
