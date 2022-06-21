@@ -57,23 +57,24 @@ class HomeController extends Controller{
     public function addPost($titolo, $id){
 
 
-        $url = "https://www.freetogame.com/g/".$id."/thumbnail.jpg";
+        if( Post::query() -> where('username', session('username')) -> where('titolo', $titolo) ->first()  != NULL){
+            return 0;
+        }else{
+
+            $url = "https://www.freetogame.com/g/".$id."/thumbnail.jpg";
         
 
-        if(Post::query() -> create([
-            'username' => session('username'), 
-            'titolo' => $titolo, 
-            'url_img' => $url
-        ])){
-            return 20;
-        }else{
-            return 5;
+            Post::query() -> create([
+                'username' => session('username'), 
+                'titolo' => $titolo, 
+                'url_img' => $url
+            ]);
         }
 
     }
 
 
-     public function listaPost(){
+    public function listaPost(){
 
         return Post::query() -> where('username' , session('username')) -> get();
 
