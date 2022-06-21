@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
         <script src="{{asset('js/cerca_persone.js')}}" defer = "true"></script>
+        <script src = "{{asset('js/navbar.js')}}" defer = "true"></script>
     </head>
 
     <body>
