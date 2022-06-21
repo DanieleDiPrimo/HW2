@@ -25,14 +25,20 @@ function onResponse(response){
     return response.json(); 
 }
 
-function prova(json){
-    console.log(json);
+function OnJsonER(json){
+    if(json == 0){
+        const errore = document.createElement("h1"); 
+        
+        errore.textContent = "GIOCO GIA' AGGIUNTO IN LIBRERIA";
+        errore.classList.add("gameError");
+        
+        box_error.appendChild(errore);
+    }
 }
 
 function ResponseDelete(response){
     if(response.ok){
-        console.log("T'appo");
-        window.location.reload();
+        fetch('/lista_post').then(onResponse).then(OnPostJson);
     }
 }
 
@@ -62,7 +68,7 @@ function gameSearch(event){
             console.log("TROVATO");
             const url = "/add_post/" + doc[i].title + "/" + doc[i].id; 
             console.log(url);
-            fetch(url).then(onResponse).then(prova); //mando i dati al server 
+            fetch(url).then(onResponse).then(OnJsonER); //mando i dati al server 
             flag=1;
         }
         
@@ -76,7 +82,7 @@ function gameSearch(event){
         
         box_error.appendChild(errore);
     }else{
-        window.location.reload();
+        fetch('/lista_post').then(onResponse).then(OnPostJson);
     }
 
 }
@@ -138,4 +144,6 @@ form.addEventListener('submit' , gameSearch);
 fetch('/get_Info_User').then(onResponse).then(OnJson);
 fetch('/api_games').then(onResponse).then(OnApiJson);
 fetch('/lista_post').then(onResponse).then(OnPostJson);
+
+
 
