@@ -21,7 +21,7 @@
           <label><input class = "email" type="email" placeholder="Email" name="email"  /></label>
           <label><input class = "username" type="text" placeholder="Username" name="username"  /></label>
           <label><input class = "password" type="password" placeholder="Password" name="password"  /></label>
-          <div class="avatar"><label>LINK della tua immagine del profilo </label><input type="text" name="avatar"/></div>
+          <div class="url_img"><label>LINK della tua immagine del profilo </label><input type="text" name="url_img"/></div>
           <input type="submit" value="Registrati" name="registrati" class="btn btn-block btn-primary" />
           </form>
           <div class="b_registrazione">Hai già un account? <a href="/login">LOGIN</a></div>
