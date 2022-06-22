@@ -10,14 +10,7 @@ function OnJson(json){
     email.textContent = "EMAIL: " + json.email; 
     username.textContent = "USERNAME: " + json.username; 
 
-    const ul = document.querySelector("#ul"); 
-
-    ul.appendChild(nome); 
-    ul.appendChild(cognome); 
-    ul.appendChild(email); 
-    ul.appendChild(username);
-
-    if(json.url_img != NULL){
+    if(json.url_img != null){
         const div = document.querySelector("#conteiner_img"); 
         const img = document.createElement("img"); 
 
