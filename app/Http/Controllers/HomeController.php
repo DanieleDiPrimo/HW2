@@ -64,7 +64,7 @@ class HomeController extends Controller{
             $url = "https://www.freetogame.com/g/".$id."/thumbnail.jpg";
         
 
-            Post::query() -> create([
+            return Post::query() -> create([
                 'username' => session('username'), 
                 'titolo' => $titolo, 
                 'url_img' => $url
